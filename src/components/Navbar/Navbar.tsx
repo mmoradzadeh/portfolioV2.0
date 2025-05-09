@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
-export const Navbar = () => {
+function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -98,3 +98,4 @@ export const Navbar = () => {
     );
 };
 
+export default Navbar;

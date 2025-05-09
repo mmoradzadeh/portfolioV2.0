@@ -1,7 +1,7 @@
 import React from 'react';
 import './Resume.css';
 
-export const Resume = () => {
+function Resume() {
     return (
         <section id="resume" className="py-20 bg-white">
             <div className="container mx-auto px-4 sm:px-6">
@@ -75,5 +75,6 @@ export const Resume = () => {
             </div>
         </section>
     );
-};
+}
 
+export default Resume;

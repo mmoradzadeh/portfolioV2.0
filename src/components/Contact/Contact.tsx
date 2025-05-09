@@ -1,7 +1,7 @@
 import React from 'react';
 import './Contact.css';
 
-export const Contact = () => {
+function Contact() {
     return (
         <section id="contact" className="py-20 dark-bg text-white">
             <div className="container mx-auto px-4 sm:px-6">
@@ -86,5 +86,7 @@ export const Contact = () => {
             </div>
         </section>
     );
-};
+}
+
+export default Contact;
 

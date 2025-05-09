@@ -1,6 +1,6 @@
 import './Projects.css';
 
-export const Projects = () => {
+function Projects() {
     return (
         <section id="projects" className="py-20 bg-white">
             <div className="container mx-auto px-4 sm:px-6">
@@ -88,4 +88,6 @@ export const Projects = () => {
             </div>
         </section>
     );
-};
+}
+
+export default Projects;
