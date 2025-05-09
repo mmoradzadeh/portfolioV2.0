@@ -1,71 +1,60 @@
-// src/components/Navbar/Navbar.tsx
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
+import './Navbar.css';
 
 export const Navbar = () => {
-    const [isMobileOpen, setIsMobileOpen] = useState(false);
-    const [hasShadow, setHasShadow] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setHasShadow(window.scrollY > 10);
+            setIsScrolled(window.scrollY > 10);
         };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleMobileMenu = () => {
-        setIsMobileOpen(!isMobileOpen);
-    };
-
-    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, target: string) => {
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
-        setIsMobileOpen(false);
-        const element = document.querySelector(target);
-        if (element) {
+        const targetId = e.currentTarget.getAttribute('href');
+        const targetElement = document.querySelector(targetId!);
+
+        if (targetElement) {
+            setIsMenuOpen(false);
             window.scrollTo({
-                top: element.getBoundingClientRect().top + window.scrollY - 80,
-                behavior: "smooth",
+                top: targetElement.getBoundingClientRect().top + window.scrollY - 80,
+                behavior: 'smooth',
             });
         }
     };
 
-    const navLinks = [
-        { name: "Home", href: "#home" },
-        { name: "Projects", href: "#projects" },
-        { name: "About", href: "#about" },
-        { name: "Resume", href: "#resume" },
-        { name: "Contact", href: "#contact" },
-    ];
-
     return (
-        <nav className={`dark-bg text-white fixed w-full z-10 transition-shadow ${hasShadow ? "shadow-xl" : "shadow-lg"}`}>
+        <nav className={`dark-bg text-white w-full fixed z-10 transition-shadow ${isScrolled ? 'shadow-xl' : ''}`}>
             <div className="container mx-auto px-4 sm:px-6 py-3">
                 <div className="flex justify-between items-center">
                     <div className="text-2xl font-bold">
-                        <span className="text-white">Mehdi</span><span className="text-red-600"> Moradzadeh</span>
+                        <span className="text-white">John</span>
+                        <span className="text-red-600">Doe</span>
                     </div>
 
-                    {/* Desktop Navigation */}
                     <div className="hidden md:flex space-x-8">
-                        {navLinks.map(link => (
+                        {['#home', '#projects', '#about', '#resume', '#contact'].map(link => (
                             <a
-                                key={link.name}
-                                href={link.href}
+                                key={link}
+                                href={link}
                                 className="nav-link"
-                                onClick={(e) => handleLinkClick(e, link.href)}
+                                onClick={handleLinkClick}
                             >
-                                {link.name}
+                                {link.replace('#', '').charAt(0).toUpperCase() + link.slice(2)}
                             </a>
                         ))}
                     </div>
 
-                    {/* Social Links */}
                     <div className="hidden md:flex space-x-4">
-                        <a href="https://github.com/MMoradzadeh" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
                             <i className="fab fa-github text-xl"></i>
                         </a>
-                        <a href="https://linkedin.com/in/mmoradzadeh" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
                             <i className="fab fa-linkedin text-xl"></i>
                         </a>
                         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
@@ -73,23 +62,22 @@ export const Navbar = () => {
                         </a>
                     </div>
 
-                    {/* Mobile Toggle */}
-                    <button className="md:hidden focus:outline-none" onClick={toggleMobileMenu}>
+                    <button className="md:hidden focus:outline-none" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <i className="fas fa-bars text-xl"></i>
                     </button>
                 </div>
 
-                {/* Mobile Menu */}
-                {isMobileOpen && (
-                    <div className="md:hidden mt-4 pb-2 space-y-2">
-                        {navLinks.map(link => (
+                {/* Mobile menu */}
+                {isMenuOpen && (
+                    <div className="md:hidden mt-4 pb-2" id="mobile-menu">
+                        {['#home', '#projects', '#about', '#resume', '#contact'].map(link => (
                             <a
-                                key={link.name}
-                                href={link.href}
-                                className="block py-2 px-2 hover:bg-gray-800 rounded"
-                                onClick={(e) => handleLinkClick(e, link.href)}
+                                key={link}
+                                href={link}
+                                onClick={handleLinkClick}
+                                className="block py-2 hover:bg-gray-800 px-2 rounded"
                             >
-                                {link.name}
+                                {link.replace('#', '').charAt(0).toUpperCase() + link.slice(2)}
                             </a>
                         ))}
                         <div className="flex space-x-4 pt-2">
@@ -109,3 +97,4 @@ export const Navbar = () => {
         </nav>
     );
 };
+

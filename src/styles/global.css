@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark-bg {
+  background: #000;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+.skill-pill:hover {
+  background-color: #dc2626;
+  color: white;
+}
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #dc2626;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+.btn-red {
+  background-color: #dc2626;
+  transition: all 0.3s ease;
+}
+.btn-red:hover {
+  background-color: #b91c1c;
+  transform: translateY(-2px);
+}
+.btn-outline-white {
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+.btn-outline-white:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-2px);
+}
+@media (max-width: 640px) {
+  .hero-content {
+      flex-direction: column-reverse;
+      text-align: center;
+  }
+  .hero-image {
+      margin-bottom: 2rem;
+  }
+  .project-grid {
+      grid-template-columns: 1fr;
+  }
+  .about-content {
+      flex-direction: column;
+  }
+  .contact-grid {
+      grid-template-columns: 1fr;
+  }
+}

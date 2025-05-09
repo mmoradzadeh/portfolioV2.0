@@ -1,0 +1,19 @@
+.about-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.skill-pill {
+  transition: all 0.3s ease;
+}
+
+.skill-pill:hover {
+  background-color: #dc2626;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .about-content {
+    flex-direction: column;
+  }
+}

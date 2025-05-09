@@ -1,17 +1,15 @@
 import { Navbar } from './components/Navbar/Navbar';
 import { Footer } from './components/Footer/Footer';
-import { Home } from './pages/Home';
-import { Projects } from './pages/Projects';
-import { About } from './pages/About';
-import { Resume } from './pages/Resume';
-import { Contact } from './pages/Contact';
+import { Projects } from './components/Projects/Projects';
+import { About } from './components/About/About';
+import { Resume } from './components/Resume/Resume';
+import { Contact } from './components/Contact/Contact';
 
 function App() {
   return (
     <>
       <Navbar />
       <main>
-        <Home />
         <Projects />
         <About />
         <Resume />
