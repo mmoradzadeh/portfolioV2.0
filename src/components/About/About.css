@@ -1,10 +1,6 @@
 .about-content {
   display: flex;
-  gap: 2rem;
-}
-
-.skill-pill {
-  transition: all 0.3s ease;
+  flex-direction: row;
 }
 
 .skill-pill:hover {

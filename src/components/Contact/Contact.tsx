@@ -22,7 +22,7 @@ function Contact() {
                                         <i className="fas fa-envelope mt-1 mr-4 text-red-500"></i>
                                         <div>
                                             <p className="font-medium">Email</p>
-                                            <p className="text-gray-300">john.doe@example.com</p>
+                                            <p className="text-gray-300">morad97mm@gmail.com</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start">

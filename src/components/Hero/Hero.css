@@ -1,0 +1,50 @@
+.dark-bg {
+  background-color: #000;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hero-image {
+  margin-bottom: 2rem;
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.btn-red {
+  background-color: #dc2626;
+  transition: all 0.3s ease;
+}
+
+.btn-red:hover {
+  background-color: #b91c1c;
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-white:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-2px);
+}

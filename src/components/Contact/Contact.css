@@ -1,20 +1,48 @@
 .dark-bg {
-    background-color: #000;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dark-bg:hover {
-    background-color: #1f2937;
-  }
-  
+  background-color: #000;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.contact-grid i {
+  color: #dc2626;
+}
+
+.text-gray-300 {
+  color: #d1d5db;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+@media (max-width: 640px) {
   .contact-grid {
-    display: grid;
     grid-template-columns: 1fr;
   }
-  
-  @media (min-width: 768px) {
-    .contact-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
+}
+
+form label {
+  color: #374151;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}

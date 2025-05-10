@@ -21,16 +21,14 @@
   width: 100%;
 }
 
+.navbar-shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
 .fab {
   transition: color 0.3s ease;
 }
 
 .fab:hover {
   color: #dc2626;
-}
-
-@media (max-width: 768px) {
-  #mobile-menu a:hover {
-    background-color: #1f2937; /* gray-800 */
-  }
 }

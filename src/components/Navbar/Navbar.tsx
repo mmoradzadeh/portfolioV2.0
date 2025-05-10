@@ -33,8 +33,8 @@ function Navbar() {
             <div className="container mx-auto px-4 sm:px-6 py-3">
                 <div className="flex justify-between items-center">
                     <div className="text-2xl font-bold">
-                        <span className="text-white">John</span>
-                        <span className="text-red-600">Doe</span>
+                        <span className="text-white">Mehdi</span>
+                        <span className="text-red-600">Moradzadeh</span>
                     </div>
 
                     <div className="hidden md:flex space-x-8">

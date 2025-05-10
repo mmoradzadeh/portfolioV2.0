@@ -1,5 +1,5 @@
-import React from 'react';
-import './Resume.css';
+import React from 'react'
+import './Resume.css'
 
 function Resume() {
     return (
@@ -15,7 +15,7 @@ function Resume() {
                 <div className="max-w-4xl mx-auto bg-gray-100 rounded-xl p-8 md:p-12">
                     <div className="flex flex-col md:flex-row justify-between items-center mb-8">
                         <div>
-                            <h3 className="text-2xl font-bold mb-2">John Doe</h3>
+                            <h3 className="text-2xl font-bold mb-2">Mehdi Moradzadeh</h3>
                             <p className="text-gray-600">Full Stack Developer</p>
                         </div>
                         <div className="mt-4 md:mt-0">
