@@ -1,48 +1,49 @@
-import React from 'react'
-import './About.css'
-import '../../styles/global.css'
+import React from 'react';
+import backgroundPhoto from '../../assets/backgroundPhoto.avif';
 
-function About() {
-    return (
-        <section id="about" className="py-20 bg-gray-100">
-            <div className="container mx-auto px-4 sm:px-6">
-                <div className="flex flex-col md:flex-row items-center about-content">
-                    <div className="md:w-1/3 mb-10 md:mb-0 flex justify-center">
-                        <div className="relative w-64 h-64">
-                            <div className="absolute inset-0 bg-red-600 rounded-lg opacity-20 blur-xl"></div>
-                            <img
-                                src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2"
-                                alt="About"
-                                className="relative w-full h-full rounded-lg object-cover border-4 border-white"
-                            />
-                        </div>
+const About: React.FC = () => (
+    <section id="about" className="py-5 section-padding bg-light">
+        <div className="container">
+            <div className="row align-items-center">
+                <div className="col-lg-4 mb-5 mb-lg-0 text-center">
+                    <div className="position-relative">
+                        <div className="position-absolute top-0 start-0 w-100 h-100 bg-danger opacity-10 rounded-3 blur"></div>
+                        <img
+                            src={backgroundPhoto}
+                            alt="About"
+                            className="img-fluid rounded-3 border border-4 border-white"
+                        />
                     </div>
-                    <div className="md:w-2/3 md:pl-12">
-                        <h2 className="text-3xl font-bold mb-6">About Me</h2>
-                        <p className="text-lg mb-6">
-                            I'm a passionate software engineer with 5+ years of experience building web and mobile applications.
-                            My journey in tech started when I built my first website at 15, and I've been hooked ever since.
-                        </p>
-                        <p className="text-lg mb-6">
-                            I specialize in JavaScript ecosystems (React, Node.js) but I'm always exploring new technologies.
-                            What excites me most is solving complex problems with elegant, maintainable solutions.
-                        </p>
-                        <p className="text-lg mb-8">
-                            When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new recipes in the kitchen.
-                        </p>
-                        <h3 className="text-xl font-semibold mb-4">My Skills</h3>
-                        <div className="flex flex-wrap gap-3">
-                            {['JavaScript', 'TypeScript', 'React', 'Node.js', 'Python', 'AWS', 'Docker', 'SQL'].map((skill, index) => (
-                                <span key={index} className="skill-pill bg-red-100 text-red-800 px-4 py-2 rounded-full font-medium">
-                                    {skill}
-                                </span>
-                            ))}
-                        </div>
+                </div>
+                <div className="col-lg-8 ps-lg-5">
+                    <h2 className="display-5 fw-bold mb-4">About Me</h2>
+                    <p className="lead mb-4">
+                        I'm a passionate software engineer with 5+ years of experience building web and mobile applications.
+                        My journey in tech started when I built my first website at 15, and I've been hooked ever since.
+                    </p>
+                    <p className="lead mb-4">
+                        I specialize in JavaScript ecosystems (React, Node.js) but I'm always exploring new technologies.
+                        What excites me most is solving complex problems with elegant, maintainable solutions.
+                    </p>
+                    <p className="lead mb-5">
+                        When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new recipes in the kitchen.
+                    </p>
+
+                    <h3 className="h4 fw-bold mb-3">My Skills</h3>
+                    <div className="d-flex flex-wrap gap-2">
+                        <span className="skill-pill badge bg-danger bg-opacity-10 text-danger px-3 py-2">JavaScript</span>
+                        <span className="skill-pill badge bg-danger bg-opacity-10 text-danger px-3 py-2">TypeScript</span>
+                        <span className="skill-pill badge bg-danger bg-opacity-10 text-danger px-3 py-2">React</span>
+                        <span className="skill-pill badge bg-danger bg-opacity-10 text-danger px-3 py-2">Node.js</span>
+                        <span className="skill-pill badge bg-danger bg-opacity-10 text-danger px-3 py-2">Python</span>
+                        <span className="skill-pill badge bg-danger bg-opacity-10 text-danger px-3 py-2">AWS</span>
+                        <span className="skill-pill badge bg-danger bg-opacity-10 text-danger px-3 py-2">Docker</span>
+                        <span className="skill-pill badge bg-danger bg-opacity-10 text-danger px-3 py-2">SQL</span>
                     </div>
                 </div>
             </div>
-        </section>
-    );
-}
+        </div>
+    </section>
+);
 
 export default About;

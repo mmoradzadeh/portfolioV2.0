@@ -1,63 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* global.css */
 
-
-/* ===== CUSTOM GLOBAL STYLES ===== */
-
-body {
-  @apply font-sans bg-white text-gray-900;
-}
-
-/* Global background override */
 .dark-bg {
   background-color: #000;
 }
 
-/* Floating animation */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.floating {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Button styles */
-.btn-red {
-  background-color: #dc2626;
+.project-card {
   transition: all 0.3s ease;
 }
-
-.btn-red:hover {
-  background-color: #b91c1c;
-  transform: translateY(-2px);
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
-.btn-outline-white {
-  border: 2px solid white;
+.skill-pill {
   transition: all 0.3s ease;
 }
-
-.btn-outline-white:hover {
-  background-color: white;
-  color: black;
-  transform: translateY(-2px);
+.skill-pill:hover {
+  background-color: #dc3545 !important;
+  color: white !important;
 }
 
-/* Nav link underline animation */
 .nav-link {
   position: relative;
 }
-
 .nav-link::after {
   content: '';
   position: absolute;
@@ -65,45 +30,95 @@ body {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: #dc2626;
+  background-color: #dc3545;
   transition: width 0.3s ease;
 }
-
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* Utility pills */
-.skill-pill {
-  transition: all 0.3s ease;
-  cursor: default;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.floating {
+  animation: float 6s ease-in-out infinite;
 }
 
-.skill-pill:hover {
-  background-color: #dc2626;
+.btn-red {
+  background-color: #dc3545;
+  color: white;
+  transition: all 0.3s ease;
+}
+.btn-red:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
   color: white;
 }
 
-/* Responsive layout helpers (matching your original HTML) */
-@media (max-width: 640px) {
-  .hero-content {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
+.btn-outline-white {
+  border: 2px solid white;
+  color: white;
+  transition: all 0.3s ease;
+}
+.btn-outline-white:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-2px);
+}
 
-  .hero-image {
-    margin-bottom: 2rem;
-  }
+.hero-section {
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+}
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+.profile-img-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+.profile-img-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #dc3545;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(20px);
+}
+.profile-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+}
 
-  .about-content {
-    flex-direction: column;
-  }
+.project-img {
+  height: 200px;
+  background: linear-gradient(to right, #212529, #495057);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
+.social-icon {
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+.social-icon:hover {
+  color: #dc3545 !important;
+}
+
+.footer-link {
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: #dc3545 !important;
 }

@@ -1,27 +1,24 @@
-import Navbar from './components/Navbar/Navbar'
-import Footer from './components/Footer/Footer'
-import Projects from './components/Projects/Projects'
-import About from './components/About/About'
-import Resume from './components/Resume/Resume'
-import Contact from './components/Contact/Contact'
-import Hero from './components/Hero/Hero'
-// import ''
+import React from 'react';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import Projects from './components/Projects/Projects';
+import About from './components/About/About';
+import Resume from './components/Resume/Resume';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <Navbar />
-
       <Hero />
       <Projects />
       <About />
       <Resume />
       <Contact />
       <Footer />
-
-
     </>
   );
-}
+};
 
 export default App;

@@ -1,93 +1,96 @@
-import './Projects.css';
+import React from 'react';
 
-function Projects() {
-    return (
-        <section id="projects" className="py-20 bg-white">
-            <div className="container mx-auto px-4 sm:px-6">
-                <h2 className="text-3xl font-bold text-center mb-4">My Projects</h2>
-                <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+const Projects: React.FC = () => (
+    <section id="projects" className="py-5 section-padding bg-white">
+        <div className="container">
+            <div className="text-center mb-5">
+                <h2 className="display-5 fw-bold mb-3">My Projects</h2>
+                <p className="lead text-muted mx-auto" style={{ maxWidth: '600px' }}>
                     Here are some of my recent projects. Each one was built to solve a specific problem or explore new technologies.
                 </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 project-grid">
-                    {[1, 2, 3].map((project, index) => (
-                        <div
-                            key={index}
-                            className="project-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 border border-gray-200 hover:-translate-y-1 hover:shadow-xl"
-                        >
-                            <div className="h-48 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center">
-                                <i
-                                    className={`text-white text-6xl ${index === 0
-                                        ? 'fas fa-project-diagram'
-                                        : index === 1
-                                            ? 'fas fa-mobile-alt'
-                                            : 'fas fa-chart-line'
-                                        }`}
-                                ></i>
+            </div>
+            <div className="row g-4">
+                {/* Project 1 */}
+                <div className="col-md-6 col-lg-4">
+                    <div className="project-card card h-100 border-0 shadow-sm">
+                        <div className="project-img rounded-top">
+                            <i className="fas fa-project-diagram text-white fa-4x"></i>
+                        </div>
+                        <div className="card-body">
+                            <h3 className="h5 card-title fw-bold">E-Commerce Platform</h3>
+                            <p className="card-text text-muted mb-3">
+                                A full-featured e-commerce solution with payment processing, inventory management, and analytics.
+                            </p>
+                            <div className="d-flex flex-wrap gap-2 mb-3">
+                                <span className="skill-pill badge bg-light text-dark">React</span>
+                                <span className="skill-pill badge bg-light text-dark">Node.js</span>
+                                <span className="skill-pill badge bg-light text-dark">MongoDB</span>
+                                <span className="skill-pill badge bg-light text-dark">Stripe API</span>
                             </div>
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold mb-2">
-                                    {index === 0
-                                        ? 'E-Commerce Platform'
-                                        : index === 1
-                                            ? 'Task Management App'
-                                            : 'Data Visualization Dashboard'}
-                                </h3>
-                                <p className="text-gray-600 mb-4">
-                                    {index === 0
-                                        ? 'A full-featured e-commerce solution with payment processing, inventory management, and analytics.'
-                                        : index === 1
-                                            ? 'A cross-platform productivity app with real-time sync, reminders, and team collaboration features.'
-                                            : 'Interactive dashboard for analyzing large datasets with customizable visualizations and reporting.'}
-                                </p>
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {(index === 0
-                                        ? ['React', 'Node.js', 'MongoDB', 'Stripe API']
-                                        : index === 1
-                                            ? ['Flutter', 'Firebase', 'Dart']
-                                            : ['D3.js', 'Python', 'Flask', 'Pandas']
-                                    ).map((tech, i) => (
-                                        <span
-                                            key={i}
-                                            className="skill-pill bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm hover:bg-red-600 hover:text-white transition"
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                                <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
-                                    <a
-                                        href="#"
-                                        className="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition-colors text-center"
-                                    >
-                                        Live Demo
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg text-sm hover:bg-gray-300 transition-colors text-center"
-                                    >
-                                        GitHub
-                                    </a>
-                                </div>
+                            <div className="d-flex flex-column flex-sm-row gap-2">
+                                <a href="#" className="btn btn-dark btn-sm">Live Demo</a>
+                                <a href="#" className="btn btn-outline-dark btn-sm">GitHub</a>
                             </div>
                         </div>
-                    ))}
+                    </div>
                 </div>
 
-                <div className="text-center mt-12">
-                    <a
-                        href="https://github.com"
-                        target="_blank"
-                        className="inline-flex items-center text-red-600 hover:text-red-800"
-                        rel="noopener noreferrer"
-                    >
-                        <span>View more on GitHub</span>
-                        <i className="fas fa-arrow-right ml-2"></i>
-                    </a>
+                {/* Project 2 */}
+                <div className="col-md-6 col-lg-4">
+                    <div className="project-card card h-100 border-0 shadow-sm">
+                        <div className="project-img rounded-top">
+                            <i className="fas fa-mobile-alt text-white fa-4x"></i>
+                        </div>
+                        <div className="card-body">
+                            <h3 className="h5 card-title fw-bold">Task Management App</h3>
+                            <p className="card-text text-muted mb-3">
+                                A cross-platform productivity app with real-time sync, reminders, and team collaboration features.
+                            </p>
+                            <div className="d-flex flex-wrap gap-2 mb-3">
+                                <span className="skill-pill badge bg-light text-dark">Flutter</span>
+                                <span className="skill-pill badge bg-light text-dark">Firebase</span>
+                                <span className="skill-pill badge bg-light text-dark">Dart</span>
+                            </div>
+                            <div className="d-flex flex-column flex-sm-row gap-2">
+                                <a href="#" className="btn btn-dark btn-sm">Live Demo</a>
+                                <a href="#" className="btn btn-outline-dark btn-sm">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Project 3 */}
+                <div className="col-md-6 col-lg-4">
+                    <div className="project-card card h-100 border-0 shadow-sm">
+                        <div className="project-img rounded-top">
+                            <i className="fas fa-chart-line text-white fa-4x"></i>
+                        </div>
+                        <div className="card-body">
+                            <h3 className="h5 card-title fw-bold">Data Visualization Dashboard</h3>
+                            <p className="card-text text-muted mb-3">
+                                Interactive dashboard for analyzing large datasets with customizable visualizations and reporting.
+                            </p>
+                            <div className="d-flex flex-wrap gap-2 mb-3">
+                                <span className="skill-pill badge bg-light text-dark">D3.js</span>
+                                <span className="skill-pill badge bg-light text-dark">Python</span>
+                                <span className="skill-pill badge bg-light text-dark">Flask</span>
+                                <span className="skill-pill badge bg-light text-dark">Pandas</span>
+                            </div>
+                            <div className="d-flex flex-column flex-sm-row gap-2">
+                                <a href="#" className="btn btn-dark btn-sm">Live Demo</a>
+                                <a href="#" className="btn btn-outline-dark btn-sm">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-    );
-}
+            <div className="text-center mt-5">
+                <a href="https://github.com/MMoradzadeh" target="_blank" className="btn btn-link text-danger text-decoration-none">
+                    View more on GitHub <i className="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+);
 
 export default Projects;

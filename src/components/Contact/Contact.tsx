@@ -1,92 +1,87 @@
 import React from 'react';
-import './Contact.css';
 
-function Contact() {
-    return (
-        <section id="contact" className="py-20 dark-bg text-white">
-            <div className="container mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
-                    <p className="text-gray-300 max-w-2xl mx-auto">
-                        Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!
-                    </p>
-                </div>
-
-                <div className="max-w-4xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 contact-grid">
-                        <div>
-                            <div className="mb-8">
-                                <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-                                <div className="space-y-4">
-                                    <div className="flex items-start">
-                                        <i className="fas fa-envelope mt-1 mr-4 text-red-500"></i>
-                                        <div>
-                                            <p className="font-medium">Email</p>
-                                            <p className="text-gray-300">morad97mm@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <i className="fas fa-phone-alt mt-1 mr-4 text-red-500"></i>
-                                        <div>
-                                            <p className="font-medium">Phone</p>
-                                            <p className="text-gray-300">+1 (555) 123-4567</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <i className="fas fa-map-marker-alt mt-1 mr-4 text-red-500"></i>
-                                        <div>
-                                            <p className="font-medium">Location</p>
-                                            <p className="text-gray-300">San Francisco, CA</p>
-                                        </div>
-                                    </div>
+const Contact: React.FC = () => (
+    <section id="contact" className="py-5 section-padding dark-bg text-white">
+        <div className="container">
+            <div className="text-center mb-5">
+                <h2 className="display-5 fw-bold mb-3">Get In Touch</h2>
+                <p className="lead text-light mx-auto" style={{ maxWidth: '600px' }}>
+                    Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!
+                </p>
+            </div>
+            <div className="row g-4">
+                <div className="col-lg-5">
+                    <div className="mb-5">
+                        <h3 className="h4 fw-bold mb-4">Contact Information</h3>
+                        <div className="d-flex flex-column gap-4">
+                            <div className="d-flex align-items-start">
+                                <i className="fas fa-envelope mt-1 me-3 text-danger"></i>
+                                <div>
+                                    <p className="fw-bold mb-1">Email</p>
+                                    <p className="text-light mb-0">mmoradzadeh@example.com</p>
                                 </div>
                             </div>
-
-                            <div>
-                                <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
-                                <div className="flex space-x-6">
-                                    <a href="https://github.com" target="_blank" className="text-2xl hover:text-red-500 transition-colors">
-                                        <i className="fab fa-github"></i>
-                                    </a>
-                                    <a href="https://linkedin.com" target="_blank" className="text-2xl hover:text-red-500 transition-colors">
-                                        <i className="fab fa-linkedin-in"></i>
-                                    </a>
-                                    <a href="https://twitter.com" target="_blank" className="text-2xl hover:text-red-500 transition-colors">
-                                        <i className="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="https://medium.com" target="_blank" className="text-2xl hover:text-red-500 transition-colors">
-                                        <i className="fab fa-medium-m"></i>
-                                    </a>
+                            <div className="d-flex align-items-start">
+                                <i className="fas fa-phone-alt mt-1 me-3 text-danger"></i>
+                                <div>
+                                    <p className="fw-bold mb-1">Phone</p>
+                                    <p className="text-light mb-0">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div className="d-flex align-items-start">
+                                <i className="fas fa-map-marker-alt mt-1 me-3 text-danger"></i>
+                                <div>
+                                    <p className="fw-bold mb-1">Location</p>
+                                    <p className="text-light mb-0">San Francisco, CA</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div className="bg-white rounded-xl p-8 text-gray-800">
-                            <h3 className="text-xl font-semibold mb-6">Send Me a Message</h3>
-                            <form>
-                                <div className="mb-4">
-                                    <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
-                                    <input type="text" id="name" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                </div>
-                                <div className="mb-4">
-                                    <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
-                                    <input type="email" id="email" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                </div>
-                                <div className="mb-4">
-                                    <label htmlFor="message" className="block text-gray-700 mb-2">Message</label>
-                                    <textarea id="message" rows={4} className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
-                                </div>
-                                <button type="submit" className="dark-bg text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors w-full">
-                                    Send Message
-                                </button>
-                            </form>
+                    <div>
+                        <h3 className="h4 fw-bold mb-4">Follow Me</h3>
+                        <div className="d-flex gap-3">
+                            <a href="https://github.com" target="_blank" className="text-white social-icon">
+                                <i className="fab fa-github fa-lg"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" className="text-white social-icon">
+                                <i className="fab fa-linkedin-in fa-lg"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" className="text-white social-icon">
+                                <i className="fab fa-twitter fa-lg"></i>
+                            </a>
+                            <a href="https://medium.com" target="_blank" className="text-white social-icon">
+                                <i className="fab fa-medium-m fa-lg"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <div className="col-lg-7">
+                    <div className="bg-white rounded-3 p-4 p-md-5 text-dark">
+                        <h3 className="h4 fw-bold mb-4">Send Me a Message</h3>
+                        <form>
+                            <div className="mb-3">
+                                <label htmlFor="name" className="form-label">Name</label>
+                                <input type="text" className="form-control" id="name" required />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="email" className="form-label">Email</label>
+                                <input type="email" className="form-control" id="email" required />
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="message" className="form-label">Message</label>
+                                <textarea className="form-control" id="message" rows={4} required></textarea>
+                            </div>
+                            <button type="submit" className="btn btn-dark w-100 py-3">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </section>
-    );
-}
+        </div>
+    </section>
+);
 
 export default Contact;
-

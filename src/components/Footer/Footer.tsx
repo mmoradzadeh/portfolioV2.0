@@ -1,31 +1,28 @@
 import React from 'react';
-import './Footer.css';
 
-function Footer() {
-    return (
-        <footer className="bg-black text-white py-8">
-            <div className="container mx-auto px-4 sm:px-6">
-                <div className="flex flex-col md:flex-row justify-between items-center">
-                    <div className="mb-4 md:mb-0">
-                        <div className="text-2xl font-bold">
-                            <span>Mehdi</span><span className="text-red-600"> Moradzadeh</span>
-                        </div>
-                        <p className="text-gray-400 mt-1">Building digital experiences that matter.</p>
+const Footer: React.FC = () => (
+    <footer className="bg-black text-white py-5">
+        <div className="container">
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
+                <div className="mb-3 mb-md-0">
+                    <div className="h3 fw-bold">
+                        <span>Mehdi</span><span className="text-danger">Moradzadeh</span>
                     </div>
-                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
-                        <a href="#home" className="hover:text-red-500 transition-colors">Home</a>
-                        <a href="#projects" className="hover:text-red-500 transition-colors">Projects</a>
-                        <a href="#about" className="hover:text-red-500 transition-colors">About</a>
-                        <a href="#resume" className="hover:text-red-500 transition-colors">Resume</a>
-                        <a href="#contact" className="hover:text-red-500 transition-colors">Contact</a>
-                    </div>
+                    <p className="text-muted mb-0">Building digital experiences that matter.</p>
                 </div>
-                <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-                    <p>&copy; 2025 Mehdi Moradzadeh. All rights reserved.</p>
+                <div className="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
+                    <a href="#home" className="text-white text-decoration-none footer-link">Home</a>
+                    <a href="#projects" className="text-white text-decoration-none footer-link">Projects</a>
+                    <a href="#about" className="text-white text-decoration-none footer-link">About</a>
+                    <a href="#resume" className="text-white text-decoration-none footer-link">Resume</a>
+                    <a href="#contact" className="text-white text-decoration-none footer-link">Contact</a>
                 </div>
             </div>
-        </footer>
-    );
-}
+            <div className="border-top border-dark pt-4 text-center text-muted">
+                <p className="mb-0">&copy; 2025 Mehdi Moradzadeh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+);
 
 export default Footer;
