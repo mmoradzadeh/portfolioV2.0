@@ -1,5 +1,7 @@
 import React from 'react';
 
+const resumePDF = "/Mehdi Moradzadeh - Resume.pdf";
+
 const Resume: React.FC = () => (
     <section id="resume" className="py-5 section-padding bg-white">
         <div className="container">
@@ -16,7 +18,7 @@ const Resume: React.FC = () => (
                         <p className="text-muted mb-0">Full Stack Developer</p>
                     </div>
                     <div>
-                        <a href="#" className="btn btn-dark btn-lg">
+                        <a href={resumePDF} download className="btn btn-dark btn-lg">
                             <i className="fas fa-download me-2"></i> Download Resume
                         </a>
                     </div>

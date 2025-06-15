@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundPhoto from '../../assets/backgroundPhoto.avif';
+import backgroundPhoto from '../../assets/backgroundPhoto.jpg';
 
 const About: React.FC = () => (
     <section id="about" className="py-5 section-padding bg-light">
@@ -7,19 +7,19 @@ const About: React.FC = () => (
             <div className="row align-items-center">
                 <div className="col-lg-4 mb-5 mb-lg-0 text-center">
                     <div className="position-relative">
-                        <div className="position-absolute top-0 start-0 w-100 h-100 bg-danger opacity-10 rounded-3 blur"></div>
+                        <div className="position-absolute top-0 start-0 w-100 h-100 opacity-10 rounded-3 blur"></div>
                         <img
                             src={backgroundPhoto}
                             alt="About"
-                            className="img-fluid rounded-3 border border-4 border-white"
+                            className="img-fluid rounded-3 border border-4 border-white bg-danger"
                         />
                     </div>
                 </div>
                 <div className="col-lg-8 ps-lg-5">
                     <h2 className="display-5 fw-bold mb-4">About Me</h2>
                     <p className="lead mb-4">
-                        I'm a passionate software engineer with 5+ years of experience building web and mobile applications.
-                        My journey in tech started when I built my first website at 15, and I've been hooked ever since.
+                        I'm a passionate software engineer with 2+ years of experience building web and mobile applications.
+                        My journey in tech started when I built my first console app at 14, and I've been hooked ever since.
                     </p>
                     <p className="lead mb-4">
                         I specialize in JavaScript ecosystems (React, Node.js) but I'm always exploring new technologies.
