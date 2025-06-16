@@ -1,5 +1,11 @@
 import React from 'react';
 
+const emailUser = "morad97mm";
+const emailDomain = "gmail.com";
+const phoneParts = ["+1", "(416)", "858", "1606"];
+const obfuscatedEmail = `${emailUser}@${emailDomain}`;
+const obfuscatedPhone = `${phoneParts[0]} ${phoneParts[1]} ${phoneParts[2]}-${phoneParts[3]}`;
+
 const Contact: React.FC = () => (
     <section id="contact" className="py-5 section-padding dark-bg text-white">
         <div className="container">
@@ -14,25 +20,38 @@ const Contact: React.FC = () => (
                     <div className="mb-5">
                         <h3 className="h4 fw-bold mb-4">Contact Information</h3>
                         <div className="d-flex flex-column gap-4">
+                            {/* Email */}
                             <div className="d-flex align-items-start">
                                 <i className="fas fa-envelope mt-1 me-3 text-danger"></i>
                                 <div>
                                     <p className="fw-bold mb-1">Email</p>
-                                    <p className="text-light mb-0">mmoradzadeh@example.com</p>
+                                    <p className="text-light mb-0">
+                                        <a href={`mailto:${emailUser}@${emailDomain}`} className="text-light text-decoration-none">
+                                            {emailUser}@{emailDomain}
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
+
+                            {/* Phone */}
                             <div className="d-flex align-items-start">
                                 <i className="fas fa-phone-alt mt-1 me-3 text-danger"></i>
                                 <div>
                                     <p className="fw-bold mb-1">Phone</p>
-                                    <p className="text-light mb-0">+1 (555) 123-4567</p>
+                                    <p className="text-light mb-0">
+                                        <a href={`tel:${phoneParts.join("").replace(/[^0-9+]/g, "")}`} className="text-light text-decoration-none">
+                                            {obfuscatedPhone}
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
+
+                            {/* Location */}
                             <div className="d-flex align-items-start">
                                 <i className="fas fa-map-marker-alt mt-1 me-3 text-danger"></i>
                                 <div>
                                     <p className="fw-bold mb-1">Location</p>
-                                    <p className="text-light mb-0">San Francisco, CA</p>
+                                    <p className="text-light mb-0">Toronto, ON</p>
                                 </div>
                             </div>
                         </div>
