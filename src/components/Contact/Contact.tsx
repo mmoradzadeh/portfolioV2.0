@@ -27,7 +27,7 @@ const Contact: React.FC = () => (
                                     <p className="fw-bold mb-1">Email</p>
                                     <p className="text-light mb-0">
                                         <a href={`mailto:${emailUser}@${emailDomain}`} className="text-light text-decoration-none">
-                                            {emailUser}@{emailDomain}
+                                            {obfuscatedEmail}
                                         </a>
                                     </p>
                                 </div>

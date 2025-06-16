@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Hero from '../../components/Hero/Hero';
-import Projects from '../../components/Projects/Projects';
+import ProjectsContainer from '../../components/ProjectsContainer/ProjectsContainer';
 import About from '../../components/About/About';
 import Resume from '../../components/Resume/Resume';
 import Contact from '../../components/Contact/Contact';
@@ -12,7 +12,7 @@ const Home: React.FC = () => (
     <>
         <Navbar />
         <Hero />
-        <Projects />
+        <ProjectsContainer />
         <About />
         <Resume />
         <Contact />
