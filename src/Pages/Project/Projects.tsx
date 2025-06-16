@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 // import ProjectsContainer from '../../components/ProjectsContainer/ProjectsContainer';
 import Footer from '../../components/Footer/Footer';
 import ComingSoon from '../../components/ComingSoon/ComingSoon';
+import Contact from '../../components/Contact/Contact';
 
 const Projects: React.FC = () => (
     <>
@@ -12,6 +13,7 @@ const Projects: React.FC = () => (
             <ComingSoon />
         </main>
         {/* <ProjectsContainer /> */}
+        <Contact />
         <Footer />
     </>
 
