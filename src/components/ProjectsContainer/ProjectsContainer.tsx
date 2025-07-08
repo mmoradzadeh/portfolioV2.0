@@ -17,9 +17,9 @@ const Projects: React.FC = () => (
                             <i className="fas fa-project-diagram text-white fa-4x"></i>
                         </div>
                         <div className="card-body">
-                            <h3 className="h5 card-title fw-bold">E-Commerce Platform</h3>
+                            <h3 className="h5 card-title fw-bold">BudgetWise</h3>
                             <p className="card-text text-muted mb-3">
-                                A full-featured e-commerce solution with payment processing, inventory management, and analytics.
+                                Using latest technologies such as React, MongoDB and graphQL, BudgetWise has been created to ease your experience with tracking your expenses, incomes and setting budgets
                             </p>
                             <div className="d-flex flex-wrap gap-2 mb-3">
                                 <span className="skill-pill badge bg-light text-dark">React</span>
@@ -28,8 +28,8 @@ const Projects: React.FC = () => (
                                 <span className="skill-pill badge bg-light text-dark">Stripe API</span>
                             </div>
                             <div className="d-flex flex-column flex-sm-row gap-2">
-                                <a href="#" className="btn btn-dark btn-sm">Live Demo</a>
-                                <a href="#" className="btn btn-outline-dark btn-sm">GitHub</a>
+                                <a href="https://afternoon-tundra-66898-d64f284645ec.herokuapp.com/" target='_blank' className="btn btn-dark btn-sm">Live Demo</a>
+                                <a href="https://github.com/TimeBytes/Budget-Wise" target='_blank' className="btn btn-outline-dark btn-sm">GitHub</a>
                             </div>
                         </div>
                     </div>
