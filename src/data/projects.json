@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Spoiled Tomatillos",
+        "description": "A cutting edge web application that allows users to provide their own inputs and reviews of their favourite contents",
+        "technologies": ["Express.js", "Node.js", "React.js", "Axios", "MySQL", "BootStrap"],
+        "github": "https://github.com/DanialDevelops/movie-review?tab=readme-ov-file",
+        "deployed": "https://mm-movie-review-4a048df21836.herokuapp.com/"
+    },
+    {
+        "name": "BooksSearch",
+        "description": "A fantastic search engine finding the books you are looking for with a quick summary, author name, and a picture of the cover",
+        "technologies": ["React.js", "Apollo", "GraphQL", "REST API", "MongoDB"],
+        "github": "https://github.com/mmoradzadeh/bookSearch",
+        "deployed": "https://book-search-mm-62a7eb940cc5.herokuapp.com/"
+    },
+    {
+        "name": "Blogtopia",
+        "description": "This is an amazing platform that allows users to share their thoughts by posting a blog or commenting on other's and exchanging their experiences",
+        "technologies": ["Node.js", "MySQL", "BootStrap", "Handle Bars", "Bcrypt"],
+        "github": "https://github.com/mmoradzadeh/blogtopia",
+        "deployed": "https://blogtopia-c4f44af01b96.herokuapp.com/"
+    }
+]
