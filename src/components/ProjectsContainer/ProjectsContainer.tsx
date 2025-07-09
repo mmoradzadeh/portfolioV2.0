@@ -3,8 +3,8 @@ import type { Project } from '../../interfaces/Projects';
 import projectData from '../../data/projects.json';
 
 function renderTechPills(technologies: string[]) {
-    return technologies.map((tech) => (
-        <span className="skill-pill badge bg-light text-dark">{tech}</span>
+    return technologies.map((tech, index) => (
+        <span className="skill-pill badge bg-light text-dark" key={index}>{tech}</span>
     ));
 }
 
@@ -20,10 +20,19 @@ const ProjectList: React.FC = () => (
             </div>
             <div className="row g-4">
                 {projectData.map((project: Project) => (
-                    <div className="col-md-6 col-lg-4">
+                    <div className="col-md-6 col-lg-4" key={project.id}>
                         <div className="project-card card h-100 border-0 shadow-sm">
                             <div className="project-img rounded-top">
-                                <i className="fas fa-project-diagram text-white fa-4x"></i>
+                                {project.image ? (
+                                    <img
+                                        src={project.image}
+                                        alt={project.name}
+                                        className="img-fluid w-100 rounded-top shadow-sm"
+                                        style={{ height: '200px', objectFit: 'cover' }}
+                                    />
+                                ) : (
+                                    <i className="fas fa-project-diagram text-white fa-4x"></i>
+                                )}
                             </div>
                             <div className="card-body">
                                 <h3 className="h5 card-title fw-bold">{project.name}</h3>
