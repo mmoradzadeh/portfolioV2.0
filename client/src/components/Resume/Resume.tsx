@@ -1,6 +1,16 @@
 import React from 'react';
+import type { Education } from '../../interfaces/Education';
+import type { Experiences } from '../../interfaces/Experiences';
+import educationData from '../../data/education.json';
+import experienceData from '../../data/experiences.json';
 
 const resumePDF = "/Mehdi Moradzadeh - Resume.pdf";
+
+function renderExperienceBullets(experienceBullet: string[]) {
+    return experienceBullet.map((task, index) => (
+        <li key={index}>{task}</li>
+    ));
+}
 
 const Resume: React.FC = () => (
     <section id="resume" className="py-5 section-padding bg-white">
@@ -15,7 +25,7 @@ const Resume: React.FC = () => (
                 <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mb-5">
                     <div className="mb-3 mb-md-0">
                         <h3 className="h2 fw-bold mb-1">Mehdi Moradzadeh</h3>
-                        <p className="text-muted mb-0">Full Stack Developer</p>
+                        <p className="text-muted mb-0">Software Engineer</p>
                     </div>
                     <div>
                         <a href={resumePDF} download className="btn btn-dark btn-lg">
@@ -27,7 +37,16 @@ const Resume: React.FC = () => (
                 <div className="row g-4">
                     <div className="col-md-6">
                         <h4 className="h4 fw-bold mb-4 pb-2 border-bottom">Experience</h4>
-                        <div className="mb-5">
+                        {experienceData.map((experience: Experiences) => (
+                            <div className="mb-5">
+                                <h5 className="h5 fw-bold">{experience.title}</h5>
+                                <p className="text-muted mb-2">{experience.company} • {experience.start} - {experience.finish}</p>
+                                <ul className="ps-3">
+                                    {renderExperienceBullets(experience.tasks)}
+                                </ul>
+                            </div>
+                        ))}
+                        {/* <div className="mb-5">
                             <h5 className="h5 fw-bold">Senior Software Engineer</h5>
                             <p className="text-muted mb-2">Tech Solutions Inc. • 2020 - Present</p>
                             <ul className="ps-3">
@@ -44,21 +63,18 @@ const Resume: React.FC = () => (
                                 <li>Optimized database queries improving performance by 40%</li>
                                 <li>Implemented automated testing suite</li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className="col-md-6">
                         <h4 className="h4 fw-bold mb-4 pb-2 border-bottom">Education</h4>
-                        <div className="mb-5">
-                            <h5 className="h5 fw-bold">MSc in Computer Science</h5>
-                            <p className="text-muted mb-2">Stanford University • 2016 - 2018</p>
-                            <p className="mb-0">Specialization in Artificial Intelligence</p>
-                        </div>
-                        <div className="mb-5">
-                            <h5 className="h5 fw-bold">BSc in Software Engineering</h5>
-                            <p className="text-muted mb-2">MIT • 2012 - 2016</p>
-                            <p className="mb-0">Graduated with Honors</p>
-                        </div>
+                        {educationData.map((education: Education) => (
+                            <div className="mb-5" key={education.id}>
+                                <h5 className="h5 fw-bold">{education.degree}</h5>
+                                <p className="text-muted mb-2">{education.organization} • {education.start} - {education.finish}</p>
+                                <p className="mb-0">{education.description}</p>
+                            </div>
+                        ))}
 
                         <h4 className="h4 fw-bold mb-4 pb-2 border-bottom">Certifications</h4>
                         <div>

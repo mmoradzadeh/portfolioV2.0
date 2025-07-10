@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "degree": "Certificate in Software Engineering",
+        "organization": "University of Toronto",
+        "start": "2023",
+        "finish": "2023",
+        "description": "Specialize Software production (frontend, backend, database engineering, devOps, unit testing) using MERN stack technologies"
+    },
+    {
+        "id": 2,
+        "degree": "M.Sc. Engineering",
+        "organization": "Ryerson University",
+        "start": "2020",
+        "finish": "2023",
+        "description": "Implemented new discoveries in understanding concrecte materials"
+    }
+]
