@@ -1,23 +1,16 @@
 [
     {
-        "id": "1",
-        "title": "",
-        "progress": "true",
-        "organization": "",
+        "id": 1,
+        "title": "AWS certified Developer",
+        "progress": false,
+        "organization": "Amazon Web Services",
         "date": ""
     },
     {
-        "id": "1",
-        "title": "",
-        "progress": "true",
-        "organization": "",
-        "date": ""
-    },
-    {
-        "id": "1",
-        "title": "",
-        "progress": "true",
-        "organization": "",
-        "date": ""
+        "id": 2,
+        "title": "JavaScript Mastery",
+        "progress": true,
+        "organization": "Code with Mosh",
+        "date": "2024"
     }
 ]

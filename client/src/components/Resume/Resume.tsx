@@ -1,8 +1,10 @@
 import React from 'react';
 import type { Education } from '../../interfaces/Education';
 import type { Experiences } from '../../interfaces/Experiences';
+import type { Certifications } from '../../interfaces/Certifications';
 import educationData from '../../data/education.json';
 import experienceData from '../../data/experiences.json';
+import certificationsData from '../../data/certifications.json';
 
 const resumePDF = "/Mehdi Moradzadeh - Resume.pdf";
 
@@ -46,24 +48,6 @@ const Resume: React.FC = () => (
                                 </ul>
                             </div>
                         ))}
-                        {/* <div className="mb-5">
-                            <h5 className="h5 fw-bold">Senior Software Engineer</h5>
-                            <p className="text-muted mb-2">Tech Solutions Inc. • 2020 - Present</p>
-                            <ul className="ps-3">
-                                <li>Led development of customer portal serving 50k+ users</li>
-                                <li>Implemented CI/CD pipeline reducing deployment time by 70%</li>
-                                <li>Mentored 3 junior developers</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 className="h5 fw-bold">Software Developer</h5>
-                            <p className="text-muted mb-2">Digital Innovations • 2018 - 2020</p>
-                            <ul className="ps-3">
-                                <li>Built REST APIs for mobile applications</li>
-                                <li>Optimized database queries improving performance by 40%</li>
-                                <li>Implemented automated testing suite</li>
-                            </ul>
-                        </div> */}
                     </div>
 
                     <div className="col-md-6">
@@ -77,10 +61,13 @@ const Resume: React.FC = () => (
                         ))}
 
                         <h4 className="h4 fw-bold mb-4 pb-2 border-bottom">Certifications</h4>
-                        <div>
-                            <h5 className="h5 fw-bold">AWS Certified Developer</h5>
-                            <p className="text-muted mb-0">Amazon Web Services • 2021</p>
-                        </div>
+                        {certificationsData.map((certificate: Certifications) => (
+                            <div className="mb-2" key={certificate.id}>
+                                <h5 className="h5 fw-bold">{certificate.title}</h5>
+                                <p className="text-muted mb-0">{certificate.organization} • {certificate.progress ? certificate.date : "In Progress"}</p>
+                            </div>
+                        ))}
+
                     </div>
                 </div>
             </div>
