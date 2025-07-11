@@ -6,6 +6,8 @@ import About from '../../components/About/About';
 import Resume from '../../components/Resume/Resume';
 import Contact from '../../components/Contact/Contact';
 import Footer from '../../components/Footer/Footer';
+import ProjectsInfiniteMenu from '../../components/ProjectsInfiniteMenu/ProjectsInfiniteMenu'
+
 
 
 const Home: React.FC = () => (
@@ -13,6 +15,7 @@ const Home: React.FC = () => (
         <Navbar />
         <Hero />
         <ProjectList />
+        <ProjectsInfiniteMenu />
         <About />
         <Resume />
         <Contact />
