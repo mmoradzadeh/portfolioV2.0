@@ -2,9 +2,9 @@ import React from 'react';
 import type { Education } from '../../interfaces/Education';
 import type { Experiences } from '../../interfaces/Experiences';
 import type { Certifications } from '../../interfaces/Certifications';
-import educationData from '../../data/education.json';
-import experienceData from '../../data/experiences.json';
-import certificationsData from '../../data/certifications.json';
+import educationData from '../../../../server/data/education.json';
+import experienceData from '../../../../server/data/experiences.json';
+import certificationsData from '../../../../server/data/certifications.json';
 
 const resumePDF = "/Mehdi Moradzadeh - Resume.pdf";
 

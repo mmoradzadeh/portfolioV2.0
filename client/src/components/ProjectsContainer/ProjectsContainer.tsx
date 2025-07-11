@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Project } from '../../interfaces/Projects';
-import projectData from '../../data/projects.json';
+import projectData from '../../../../server/data/projects.json';
 
 function renderTechPills(technologies: string[]) {
     return technologies.map((tech, index) => (

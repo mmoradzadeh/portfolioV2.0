@@ -60,17 +60,11 @@ const Contact: React.FC = () => (
                     <div>
                         <h3 className="h4 fw-bold mb-4">Follow Me</h3>
                         <div className="d-flex gap-3">
-                            <a href="https://github.com" target="_blank" className="text-white social-icon">
+                            <a href="https://github.com/MMoradzadeh" target="_blank" className="text-white social-icon">
                                 <i className="fab fa-github fa-lg"></i>
                             </a>
-                            <a href="https://linkedin.com" target="_blank" className="text-white social-icon">
+                            <a href="https://linkedin.com/in/mmoradzadeh" target="_blank" className="text-white social-icon">
                                 <i className="fab fa-linkedin-in fa-lg"></i>
-                            </a>
-                            <a href="https://twitter.com" target="_blank" className="text-white social-icon">
-                                <i className="fab fa-twitter fa-lg"></i>
-                            </a>
-                            <a href="https://medium.com" target="_blank" className="text-white social-icon">
-                                <i className="fab fa-medium-m fa-lg"></i>
                             </a>
                         </div>
                     </div>
