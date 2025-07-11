@@ -14,8 +14,8 @@ const Navbar: React.FC = () => (
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li className="nav-item"><a className="nav-link px-3" href="/">Home</a></li>
                     <li className="nav-item"><a className="nav-link px-3" href="/Projects">Projects</a></li>
-                    <li className="nav-item"><a className="nav-link px-3" href="#about">About</a></li>
-                    <li className="nav-item"><a className="nav-link px-3" href="#resume">Resume</a></li>
+                    <li className="nav-item"><a className="nav-link px-3" href="/#about">About</a></li>
+                    <li className="nav-item"><a className="nav-link px-3" href="/#resume">Resume</a></li>
                     <li className="nav-item"><a className="nav-link px-3" href="#contact">Contact</a></li>
                 </ul>
                 <div className="d-flex ms-lg-4">

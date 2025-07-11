@@ -6,9 +6,10 @@
         "start": "2023",
         "finish": "Present",
         "tasks": [
-            "a",
-            "b",
-            "c"
+            "Developed automated Excel tools and cloud databases improving operational efficiency and real-time analytics",
+            "Migrated legacy systems to modern web platforms with server optimizations, boosting performance by 15%",
+            "Enhanced data security with role-based controls and multi-factor authentication, lowering incidents by 30%",
+            "Redesigned web applications using React.js, increasing user engagement by 25%"
         ]
     },
     {
@@ -18,9 +19,9 @@
         "start": "2022",
         "finish": "2023",
         "tasks": [
-            "a",
-            "b",
-            "c"
+            "Led on-site inspections for restoration projects, ensuring contractor compliance with specifications",
+            "Produced detailed technical reports, translating complex findings for clients and supporting dispute resolution",
+            "Performed failure analyses and managed AutoCAD designs to identify and resolve non-compliance issues"
         ]
     }
 ]

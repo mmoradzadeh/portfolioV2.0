@@ -29,3 +29,9 @@ dist-ssr
 
 # iCloud placeholder files
 *.icloud
+
+/server/.env
+*.pem
+*.key
+*.crt
+*.pfx
