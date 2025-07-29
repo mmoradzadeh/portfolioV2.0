@@ -70,8 +70,9 @@ const Contact: React.FC = () => (
                         </div>
                     </div>
                 </div>
-
-                <ContactFrom />
+                <div className="col-lg-7">
+                    <ContactFrom />
+                </div>
             </div>
         </div>
     </section>
