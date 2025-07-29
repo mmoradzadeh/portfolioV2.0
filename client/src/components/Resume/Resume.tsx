@@ -40,7 +40,7 @@ const Resume: React.FC = () => (
                     <div className="col-md-6">
                         <h4 className="h4 fw-bold mb-4 pb-2 border-bottom">Experience</h4>
                         {experienceData.map((experience: Experiences) => (
-                            <div className="mb-5">
+                            <div key={experience.id} className="mb-5">
                                 <h5 className="h5 fw-bold">{experience.title}</h5>
                                 <p className="text-muted mb-2">{experience.company} • {experience.start} - {experience.finish}</p>
                                 <ul className="ps-3">
