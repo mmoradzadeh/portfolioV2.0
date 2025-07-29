@@ -38,7 +38,7 @@ const ContactFrom = () => {
                 <div className="mb-4">
                     <label htmlFor="message" className="form-label">Message</label>
                     <textarea {...register('message', {
-                        required: "Please write a few word ;)",
+                        required: "Please write a few words ;)",
                         minLength: {
                             value: 10,
                             message: "Surely, can do better than that :|"
