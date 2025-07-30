@@ -2,8 +2,14 @@ import { useForm, type FieldValues } from "react-hook-form"
 
 import AlertError from "../AlertError/AlertError";
 
+interface FormData {
+    name: string;
+    email: string;
+    message: string;
+}
+
 const ContactFrom = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
     const onSubmit = (data: FieldValues) => {
         console.log(data);
     };
