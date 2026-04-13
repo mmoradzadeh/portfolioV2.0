@@ -23,15 +23,23 @@ dist-ssr
 *.sln
 *.sw?
 
-# Environment variables
+# Environment variables — NEVER commit secrets
 .env
+.env.local
 .env.*.local
+client/.env.local
+client/.env.*.local
+server/.env
+server/.env.local
 
 # iCloud placeholder files
 *.icloud
 
-/server/.env
+# Secrets / certificates
 *.pem
 *.key
 *.crt
 *.pfx
+*.p12
+*.jks
+*.keystore

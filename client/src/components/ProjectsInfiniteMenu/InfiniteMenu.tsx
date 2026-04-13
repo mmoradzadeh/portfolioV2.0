@@ -374,7 +374,8 @@ function createShader(
         return shader;
     }
 
-    console.error(gl.getShaderInfoLog(shader));
+    // Only log shader compilation errors in development — never expose GPU info in production
+    if (import.meta.env.DEV) console.error("[WebGL shader]", gl.getShaderInfoLog(shader));
     gl.deleteShader(shader);
     return null;
 }
@@ -418,7 +419,8 @@ function createProgram(
         return program;
     }
 
-    console.error(gl.getProgramInfoLog(program));
+    // Only log program link errors in development — never expose GPU info in production
+    if (import.meta.env.DEV) console.error("[WebGL program]", gl.getProgramInfoLog(program));
     gl.deleteProgram(program);
     return null;
 }
@@ -1232,10 +1234,11 @@ class InfiniteGridMenu {
     }
 }
 
+// Use a same-origin fallback — no third-party image hosts
 const defaultItems: MenuItem[] = [
     {
-        image: "https://picsum.photos/900/900?grayscale",
-        link: "https://google.com/",
+        image: "/project-placeholder.jpg",
+        link: "/",
         title: "",
         description: "",
     },
@@ -1288,10 +1291,22 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
 
     const handleButtonClick = () => {
         if (!activeItem?.link) return;
-        if (activeItem.link.startsWith("http")) {
-            window.open(activeItem.link, "_blank");
-        } else {
-            console.log("Internal route:", activeItem.link);
+
+        // Validate that the URL is http/https — block javascript: and data: URIs
+        try {
+            const url = new URL(activeItem.link, window.location.origin);
+            if (url.protocol !== "https:" && url.protocol !== "http:") return;
+
+            if (url.origin === window.location.origin) {
+                // Internal navigation — no new tab needed
+                window.location.href = url.href;
+            } else {
+                // External — open with noopener + noreferrer to prevent tab-napping
+                const newTab = window.open("about:blank", "_blank", "noopener,noreferrer");
+                if (newTab) newTab.location.href = url.href;
+            }
+        } catch {
+            // Unparseable URL — do nothing
         }
     };
 

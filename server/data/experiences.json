@@ -1,27 +1,35 @@
 [
     {
         "id": 1,
-        "title": "Database/Backend Engineer",
-        "company": "Mr. Beaver Inc.",
-        "start": "2023",
+        "title": "Software Engineer II",
+        "company": "FDM Group | FinTech",
+        "location": "Toronto, ON",
+        "start": "Aug 2025",
         "finish": "Present",
         "tasks": [
-            "Developed automated Excel tools and cloud databases improving operational efficiency and real-time analytics",
-            "Migrated legacy systems to modern web platforms with server optimizations, boosting performance by 15%",
-            "Enhanced data security with role-based controls and multi-factor authentication, lowering incidents by 30%",
-            "Redesigned web applications using React.js, increasing user engagement by 25%"
+            "Developed a modular React admin dashboard with Axios for async API integration, featuring client-side route guarding and dynamic forms to streamline CRUD operations.",
+            "Automated comprehensive end-to-end testing suites using Playwright, increasing frontend test coverage by 40% and ensuring seamless user workflows across multiple browser engines.",
+            "Engineered administrative management modules using Java Spring Boot with advanced user querying and data modeling to ensure high-performance, consistent service outputs.",
+            "Architected relational data structures utilizing JPA Repository for custom query logic and managed schema versioning through Flyway to maintain data integrity across environments.",
+            "Strengthened system security by implementing Spring Security filters, JWT for stateless sessions, and BCrypt for password hashing, while enforcing granular RBAC and CORS port restrictions.",
+            "Orchestrated containerized deployments via Docker and GKE, automating CI/CD pipelines with GitLab to trigger Artifact Registry builds for versioning and backtrack compatibility.",
+            "Managed sensitive application variables and API keys using Google Secret Manager for secure, centralized configuration management across clustered microservices."
         ]
     },
     {
         "id": 2,
-        "title": "Jr. Site Engineer",
-        "company": "R&C Engineering",
-        "start": "2022",
-        "finish": "2023",
+        "title": "Software Engineer",
+        "company": "Mr. Beaver Inc. | Manufacturing",
+        "location": "Vaughan, ON",
+        "start": "Feb 2023",
+        "finish": "Aug 2025",
         "tasks": [
-            "Led on-site inspections for restoration projects, ensuring contractor compliance with specifications",
-            "Produced detailed technical reports, translating complex findings for clients and supporting dispute resolution",
-            "Performed failure analyses and managed AutoCAD designs to identify and resolve non-compliance issues"
+            "Architected and launched the company's primary web application using Next.js and Tailwind CSS, improving average page load time by 40% through Server-Side Rendering (SSR).",
+            "Engineered a bespoke internal employee management system using the MERN stack to automate scheduling and payroll tracking.",
+            "Designed backend logic to automate inventory tracking and financial operations, reducing manual workflows by 25% via custom RESTful API endpoints.",
+            "Integrated OAuth2 authentication and JWT for secure session management, ensuring authorized access to sensitive internal company data.",
+            "Migrated legacy paper-based operations to a modern MySQL architecture, digitalizing records and improving overall data consistency and retrieval speed.",
+            "Orchestrated the full deployment lifecycle on Heroku, managing CI/CD pipelines to ensure stable, continuous releases for business-critical operations."
         ]
     }
 ]

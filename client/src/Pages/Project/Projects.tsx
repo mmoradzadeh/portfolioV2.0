@@ -1,25 +1,17 @@
 import React from 'react';
 
 import Navbar from '../../components/Navbar/Navbar';
-// import ProjectsContainer from '../../components/ProjectsContainer/ProjectsContainer';
-import Footer from '../../components/Footer/Footer';
-// import ComingSoon from '../../components/ComingSoon/ComingSoon';
+import ProjectsContainer from '../../components/ProjectsContainer/ProjectsContainer';
 import Contact from '../../components/Contact/Contact';
-import ProjectsInfiniteMenu from '../../components/ProjectsInfiniteMenu/ProjectsInfiniteMenu'
-
+import Footer from '../../components/Footer/Footer';
 
 const Projects: React.FC = () => (
     <>
         <Navbar />
-        {/* <main className="container py-5">
-            <ComingSoon />
-        </main> */}
-        <ProjectsInfiniteMenu />
-        {/* <ProjectsContainer /> */}
+        <ProjectsContainer />
         <Contact />
         <Footer />
     </>
-
 );
 
 export default Projects;

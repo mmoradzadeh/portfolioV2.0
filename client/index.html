@@ -4,23 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>My Portfolio</title>
-    <meta name="description" content="Portfolio of Mehdi Moradzadeh — Software Developer" />
-    <meta name="application-name" content="MM Portfolio" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- ── Page identity ───────────────────────────────────────────── -->
+    <title>Mehdi Moradzadeh — Full-Stack Software Engineer</title>
+    <meta name="description" content="Portfolio of Mehdi Moradzadeh — Full-Stack Software Engineer specialising in Java Spring Boot, React/Next.js, and GCP cloud infrastructure." />
+    <meta name="application-name" content="Mehdi Moradzadeh Portfolio" />
+    <meta name="author" content="Mehdi Moradzadeh" />
     <meta name="theme-color" content="#000000" />
 
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <!-- ── Security meta headers ────────────────────────────────────
+         Note: HTTP headers set by the server (Helmet) take precedence
+         over meta tags in modern browsers. These act as a fallback for
+         environments where the app is served without the Node server
+         (e.g. plain static hosting like Vercel / Netlify).
+    ─────────────────────────────────────────────────────────────── -->
 
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Referrer-Policy: only send the origin (no path/query) to cross-origin -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- X-Content-Type-Options: prevent MIME-sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    <!-- X-Frame-Options: deny framing (clickjacking protection) -->
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+
+    <!-- Content-Security-Policy (meta fallback)
+         Allows:
+           · scripts from self + EmailJS CDN
+           · styles from self (inline needed for Bootstrap JS tooltips)
+           · images from self + data URIs + blob URIs (WebGL canvas)
+           · connections to EmailJS API only
+           · no frames, no plugins, no base-tag hijacking
+    -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src  'self' 'unsafe-inline' https://cdn.emailjs.com;
+      style-src   'self' 'unsafe-inline';
+      img-src     'self' data: blob:;
+      font-src    'self' data:;
+      connect-src 'self' https://api.emailjs.com;
+      frame-src   'none';
+      object-src  'none';
+      base-uri    'self';
+      form-action 'self';
+    " />
+
+    <!-- Permissions-Policy: disable unused browser features -->
+    <meta http-equiv="Permissions-Policy" content="
+      geolocation=(),
+      microphone=(),
+      camera=(),
+      payment=(),
+      usb=(),
+      interest-cohort=()
+    " />
+
+    <!-- ── PWA / mobile ─────────────────────────────────────────────── -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- ── Favicons ─────────────────────────────────────────────────── -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
 
   <body>

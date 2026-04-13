@@ -8,68 +8,118 @@ import certificationsData from '../../../../server/data/certifications.json';
 
 const resumePDF = "/Mehdi Moradzadeh - Resume.pdf";
 
-function renderExperienceBullets(experienceBullet: string[]) {
-    return experienceBullet.map((task, index) => (
-        <li key={index}>{task}</li>
-    ));
-}
-
 const Resume: React.FC = () => (
-    <section id="resume" className="py-5 section-padding bg-white">
+    <section id="resume" className="py-5 section-padding bg-light">
         <div className="container">
+
+            {/* ── Header ── */}
             <div className="text-center mb-5">
-                <h2 className="display-5 fw-bold mb-3">My Resume</h2>
-                <p className="lead text-muted mx-auto" style={{ maxWidth: '600px' }}>
-                    Download my resume to learn more about my professional experience and education.
+                <span className="section-label">Career</span>
+                <h2 className="display-5 fw-bold mb-2">My Resume</h2>
+                <div className="section-divider"></div>
+                <p className="lead text-muted mx-auto" style={{ maxWidth: '580px' }}>
+                    A summary of my professional journey, education, and credentials.
                 </p>
             </div>
-            <div className="bg-light rounded-3 p-4 p-md-5">
-                <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mb-5">
-                    <div className="mb-3 mb-md-0">
-                        <h3 className="h2 fw-bold mb-1">Mehdi Moradzadeh</h3>
-                        <p className="text-muted mb-0">Software Engineer</p>
-                    </div>
-                    <div>
-                        <a href={resumePDF} download className="btn btn-dark btn-lg">
-                            <i className="fas fa-download me-2"></i> Download Resume
+
+            {/* ── Identity + Download ── */}
+            <div className="bg-white rounded-3 shadow-sm p-4 p-md-5 mb-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div>
+                    <h3 className="h2 fw-bold mb-1">Mehdi Moradzadeh</h3>
+                    <p className="text-muted mb-1">Full-Stack Software Engineer · Toronto, ON</p>
+                    <div className="d-flex flex-wrap gap-3 mt-2">
+                        <a href="mailto:mehdimoradzadeh@outlook.com" className="text-muted small text-decoration-none">
+                            <i className="fas fa-envelope me-1 text-danger"></i>mehdimoradzadeh@outlook.com
+                        </a>
+                        <a href="https://linkedin.com/in/mmoradzadeh" target="_blank" rel="noreferrer" className="text-muted small text-decoration-none">
+                            <i className="fab fa-linkedin me-1 text-danger"></i>linkedin.com/in/mmoradzadeh
+                        </a>
+                        <a href="https://github.com/MMoradzadeh" target="_blank" rel="noreferrer" className="text-muted small text-decoration-none">
+                            <i className="fab fa-github me-1 text-danger"></i>github.com/MMoradzadeh
                         </a>
                     </div>
                 </div>
+                <a href={resumePDF} download className="btn btn-dark btn-lg px-4 flex-shrink-0">
+                    <i className="fas fa-download me-2"></i>Download PDF
+                </a>
+            </div>
 
-                <div className="row g-4">
-                    <div className="col-md-6">
-                        <h4 className="h4 fw-bold mb-4 pb-2 border-bottom">Experience</h4>
-                        {experienceData.map((experience: Experiences) => (
-                            <div key={experience.id} className="mb-5">
-                                <h5 className="h5 fw-bold">{experience.title}</h5>
-                                <p className="text-muted mb-2">{experience.company} • {experience.start} - {experience.finish}</p>
-                                <ul className="ps-3">
-                                    {renderExperienceBullets(experience.tasks)}
-                                </ul>
+            {/* ── Experience + Education side-by-side ── */}
+            <div className="row g-4">
+
+                {/* Experience */}
+                <div className="col-lg-6">
+                    <div className="bg-white rounded-3 shadow-sm p-4 h-100">
+                        <h4 className="h5 fw-bold mb-4 d-flex align-items-center gap-2">
+                            <span className="contact-info-icon"><i className="fas fa-briefcase text-danger small"></i></span>
+                            Work Experience
+                        </h4>
+                        {(experienceData as Experiences[]).map((exp, idx) => (
+                            <div key={exp.id} className={`d-flex gap-3 ${idx < experienceData.length - 1 ? 'mb-4 pb-4 border-bottom' : ''}`}>
+                                <div className="resume-timeline-dot mt-1"></div>
+                                <div className="flex-grow-1">
+                                    <h5 className="h6 fw-bold mb-0">{exp.title}</h5>
+                                    <p className="text-danger small fw-semibold mb-1">{exp.company}</p>
+                                    <p className="text-muted small mb-2">
+                                        <i className="fas fa-calendar-alt me-1"></i>{exp.start} – {exp.finish}
+                                        {exp.location && <span className="ms-2"><i className="fas fa-map-marker-alt me-1"></i>{exp.location}</span>}
+                                    </p>
+                                    <ul className="ps-3 mb-0" style={{ fontSize: '0.85rem', color: '#555' }}>
+                                        {exp.tasks.map((task, i) => (
+                                            <li key={i} className="mb-1">{task}</li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
                         ))}
-                    </div>
-
-                    <div className="col-md-6">
-                        <h4 className="h4 fw-bold mb-4 pb-2 border-bottom">Education</h4>
-                        {educationData.map((education: Education) => (
-                            <div className="mb-5" key={education.id}>
-                                <h5 className="h5 fw-bold">{education.degree}</h5>
-                                <p className="text-muted mb-2">{education.organization} • {education.start} - {education.finish}</p>
-                                <p className="mb-0">{education.description}</p>
-                            </div>
-                        ))}
-
-                        <h4 className="h4 fw-bold mb-4 pb-2 border-bottom">Certifications</h4>
-                        {certificationsData.map((certificate: Certifications) => (
-                            <div className="mb-2" key={certificate.id}>
-                                <h5 className="h5 fw-bold">{certificate.title}</h5>
-                                <p className="text-muted mb-0">{certificate.organization} • {certificate.progress ? certificate.date : "In Progress"}</p>
-                            </div>
-                        ))}
-
                     </div>
                 </div>
+
+                {/* Education + Certifications */}
+                <div className="col-lg-6">
+                    <div className="bg-white rounded-3 shadow-sm p-4 mb-4">
+                        <h4 className="h5 fw-bold mb-4 d-flex align-items-center gap-2">
+                            <span className="contact-info-icon"><i className="fas fa-graduation-cap text-danger small"></i></span>
+                            Education
+                        </h4>
+                        {(educationData as Education[]).map((edu, idx) => (
+                            <div key={edu.id} className={`d-flex gap-3 ${idx < educationData.length - 1 ? 'mb-4 pb-4 border-bottom' : ''}`}>
+                                <div className="resume-timeline-dot mt-1"></div>
+                                <div>
+                                    <h5 className="h6 fw-bold mb-0">{edu.degree}</h5>
+                                    <p className="text-danger small fw-semibold mb-1">{edu.organization}</p>
+                                    <p className="text-muted small mb-1">
+                                        <i className="fas fa-calendar-alt me-1"></i>{edu.start} – {edu.finish}
+                                    </p>
+                                    <p className="mb-0" style={{ fontSize: '0.85rem', color: '#555' }}>{edu.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="bg-white rounded-3 shadow-sm p-4">
+                        <h4 className="h5 fw-bold mb-4 d-flex align-items-center gap-2">
+                            <span className="contact-info-icon"><i className="fas fa-certificate text-danger small"></i></span>
+                            Certifications
+                        </h4>
+                        {(certificationsData as Certifications[]).map((cert) => (
+                            <div key={cert.id} className="d-flex align-items-start gap-3 mb-3">
+                                <div className="resume-timeline-dot mt-1"></div>
+                                <div>
+                                    <h5 className="h6 fw-bold mb-0">{cert.title}</h5>
+                                    <p className="text-muted small mb-0">
+                                        {cert.organization} ·{' '}
+                                        {cert.progress
+                                            ? <span className="text-success fw-medium">{cert.date}</span>
+                                            : <span className="text-warning fw-medium">In Progress</span>
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

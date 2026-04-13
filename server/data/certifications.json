@@ -1,16 +1,16 @@
 [
     {
         "id": 1,
-        "title": "AWS certified Developer",
-        "progress": false,
-        "organization": "Amazon Web Services",
-        "date": ""
+        "title": "Google Cloud Innovator — Core Infrastructure",
+        "progress": true,
+        "organization": "Google Cloud",
+        "date": "2024"
     },
     {
         "id": 2,
-        "title": "JavaScript Mastery",
-        "progress": true,
-        "organization": "Code with Mosh",
-        "date": "2024"
+        "title": "AWS Certified Developer",
+        "progress": false,
+        "organization": "Amazon Web Services",
+        "date": "In Progress"
     }
 ]

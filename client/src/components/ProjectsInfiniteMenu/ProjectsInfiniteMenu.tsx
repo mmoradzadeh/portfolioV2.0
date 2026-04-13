@@ -1,8 +1,9 @@
 import InfiniteMenu from './InfiniteMenu';
 import projectData from '../../../../server/data/projects.json';
 
+// Use only same-origin images — no third-party image hosts
 const items = projectData.map((project) => ({
-    image: project.image || 'https://via.placeholder.com/300x300?text=No+Image',
+    image: project.image ? `/${project.image}` : '/project-placeholder.jpg',
     link: project.deployed || project.github || '#',
     title: project.name,
     description: project.description,

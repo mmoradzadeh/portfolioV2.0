@@ -1,18 +1,18 @@
 [
     {
         "id": 1,
-        "degree": "Certificate in Software Engineering",
+        "degree": "Full Stack Web Development Certificate",
         "organization": "University of Toronto",
         "start": "2023",
         "finish": "2023",
-        "description": "Specialize Software production (frontend, backend, database engineering, devOps, unit testing) using MERN stack technologies"
+        "description": "Intensive program covering full-stack software production — frontend, backend, database engineering, DevOps, and unit testing using MERN stack technologies."
     },
     {
         "id": 2,
-        "degree": "M.Sc. Engineering",
-        "organization": "Ryerson University",
+        "degree": "Master of Applied Science (MASc) in Engineering",
+        "organization": "Toronto Metropolitan University",
         "start": "2020",
         "finish": "2023",
-        "description": "Implemented new discoveries in understanding concrecte materials"
+        "description": "Developed advanced analytical frameworks and research methodologies for complex system modeling. Applied engineering principles to data-driven problem solving."
     }
 ]
