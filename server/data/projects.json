@@ -1,20 +1,34 @@
 [
-    {
-        "id": 1,
-        "name": "Mr. Beaver Inc. — Company Platform",
-        "description": "Full-stack company web platform built with Next.js and Tailwind CSS, featuring SSR for 40% faster page loads, an internal MERN-stack employee management system, and OAuth2/JWT-secured REST APIs for inventory and payroll automation.",
-        "technologies": ["Next.js", "React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "MySQL", "JWT"],
-        "github": "https://github.com/MMoradzadeh",
-        "deployed": "https://mr-beaver-inc-mvp.vercel.app/",
-        "image": "MrBeaver.jpg"
-    },
-    {
-        "id": 2,
-        "name": "Yes Canada — Immigration Portal",
-        "description": "Professional immigration consultancy web portal with a modern React front-end, responsive design, and streamlined client intake flows to help users navigate Canadian immigration pathways.",
-        "technologies": ["React", "TypeScript", "Tailwind CSS", "Node.js", "REST API"],
-        "github": "https://github.com/MMoradzadeh",
-        "deployed": "https://yes-canada-website.vercel.app/",
-        "image": "YesCanada.jpg"
-    }
+	{
+		"id": 1,
+		"name": "Mr. Beaver Inc. — Custom Cabinetry and Mill Working Portfolio",
+		"description": "Frontend Company web platform built with React and Tailwind CSS, bringing modern portfolio showcasing top tier modern architecture in style",
+		"technologies": [
+			"React",
+			"Tailwind CSS",
+			"Node.js",
+			"Express.js",
+			"MongoDB",
+			"MySQL",
+			"JWT"
+		],
+		"github": "https://github.com/MMoradzadeh",
+		"deployed": "https://mr-beaver-inc-mvp.vercel.app/",
+		"image": "MrBeaver.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Yes Canada — Dental Composit Supplier",
+		"description": "Professional dental composite supplier web portfolio with a modern React front-end, responsive design, and streamlined client intake flows to help users navigate Canadian immigration pathways.",
+		"technologies": [
+			"React",
+			"TypeScript",
+			"Tailwind CSS",
+			"Node.js",
+			"REST API"
+		],
+		"github": "https://github.com/MMoradzadeh",
+		"deployed": "https://yes-canada-website.vercel.app/",
+		"image": "YesCanada.jpg"
+	}
 ]

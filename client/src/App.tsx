@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useScrollToHash } from './hooks/useScrollToHash';
+import { ThemeProvider } from './context/ThemeContext';
 
 import Home from './Pages/Home/Home';
 import Projects from './Pages/Project/Projects';
@@ -18,9 +19,11 @@ const RouterApp: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <RouterApp />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <RouterApp />
+      </Router>
+    </ThemeProvider>
   );
 };
 

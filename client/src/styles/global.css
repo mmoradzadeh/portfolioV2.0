@@ -1,292 +1,657 @@
 /* =====================================================================
    global.css — Portfolio Design System
-   Colour palette: #000 background · #dc3545 accent · #fff text
+   Theming via CSS custom properties on :root (dark) / [data-theme="light"]
+   Accent colour: #dc3545 (Bootstrap danger red) — same in both modes
    ===================================================================== */
+
+/* ── CSS Custom Properties ───────────────────────────────────────────── */
+:root {
+	/* accent — never changes */
+	--accent: #dc3545;
+	--accent-hover: #c82333;
+	--accent-sub: rgba(220, 53, 69, 0.14);
+	--accent-border: rgba(220, 53, 69, 0.4);
+
+	/* dark mode defaults */
+	--bg: #0a0a0a;
+	--bg-alt: #111111;
+	--surface: #161616;
+	--card: #141414;
+	--card-border: rgba(255, 255, 255, 0.07);
+	--text: #ffffff;
+	--text-sec: rgba(255, 255, 255, 0.55);
+	--text-sub: rgba(255, 255, 255, 0.35);
+	--muted-label: rgba(255, 255, 255, 0.4);
+	--border: rgba(255, 255, 255, 0.08);
+	--navbar-bg: rgba(10, 10, 10, 0.92);
+	--navbar-text: rgba(255, 255, 255, 0.85);
+	--shadow: rgba(0, 0, 0, 0.4);
+	--input-bg: #1c1c1c;
+	--input-border: rgba(255, 255, 255, 0.14);
+	--input-text: #fff;
+	--input-ph: rgba(255, 255, 255, 0.3);
+	--form-card: #141414;
+	--form-card-text: #fff;
+	--footer-bg: #000000;
+	--footer-border: rgba(255, 255, 255, 0.07);
+	--light-section-bg: #f8f9fa; /* About / Resume keep their existing light look in dark mode */
+	--light-card-bg: #ffffff;
+	--toggle-bg: rgba(255, 255, 255, 0.1);
+	--toggle-border: rgba(255, 255, 255, 0.18);
+	--toggle-color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="light"] {
+	--bg: #f4f5f7;
+	--bg-alt: #ffffff;
+	--surface: #eef0f3;
+	--card: #ffffff;
+	--card-border: rgba(0, 0, 0, 0.07);
+	--text: #111111;
+	--text-sec: #555555;
+	--text-sub: #888888;
+	--muted-label: #777777;
+	--border: rgba(0, 0, 0, 0.1);
+	--navbar-bg: rgba(255, 255, 255, 0.96);
+	--navbar-text: #222222;
+	--shadow: rgba(0, 0, 0, 0.08);
+	--input-bg: #f8f9fa;
+	--input-border: rgba(0, 0, 0, 0.14);
+	--input-text: #111;
+	--input-ph: #aaa;
+	--form-card: #ffffff;
+	--form-card-text: #111;
+	--footer-bg: #1a1a1a; /* footer stays dark in both modes */
+	--footer-border: rgba(255, 255, 255, 0.07);
+	--light-section-bg: #f8f9fa;
+	--light-card-bg: #ffffff;
+	--toggle-bg: rgba(0, 0, 0, 0.06);
+	--toggle-border: rgba(0, 0, 0, 0.15);
+	--toggle-color: #333333;
+}
 
 /* ── Typography ─────────────────────────────────────────────────────── */
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  color: #212529;
+	font-family:
+		"Segoe UI",
+		system-ui,
+		-apple-system,
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background-color: var(--bg);
+	color: var(--text);
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 .letter-spacing-wide {
-  letter-spacing: 0.12em;
-  font-size: 0.8rem;
+	letter-spacing: 0.12em;
+	font-size: 0.8rem;
 }
 
 /* ── Colour helpers ──────────────────────────────────────────────────── */
 .dark-bg {
-  background-color: #0a0a0a;
+	background-color: var(--bg) !important;
+	color: var(--text);
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 }
 
 /* ── Layout ──────────────────────────────────────────────────────────── */
 .hero-section {
-  padding-top: 9rem;
-  padding-bottom: 6rem;
+	padding-top: 9rem;
+	padding-bottom: 6rem;
 }
 
 .section-padding {
-  padding-top: 5.5rem;
-  padding-bottom: 5.5rem;
+	padding-top: 5.5rem;
+	padding-bottom: 5.5rem;
 }
 
 /* ── Navbar ──────────────────────────────────────────────────────────── */
 .navbar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
-  background-color: rgba(10, 10, 10, 0.92) !important;
+	border-bottom: 1px solid var(--border);
+	backdrop-filter: blur(8px);
+	background-color: var(--navbar-bg) !important;
+	transition:
+		background-color 0.3s ease,
+		border-color 0.3s ease;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+	color: var(--navbar-text) !important;
 }
 
 .nav-link {
-  position: relative;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+	position: relative;
+	font-size: 0.9rem;
+	font-weight: 500;
+	letter-spacing: 0.02em;
 }
 .nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -3px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #dc3545;
-  transition: width 0.3s ease;
-  border-radius: 2px;
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: -3px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: var(--accent);
+	transition: width 0.3s ease;
+	border-radius: 2px;
 }
 .nav-link:hover::after {
-  width: 70%;
+	width: 70%;
+}
+
+/* Hamburger toggler adapts to light/dark */
+[data-theme="light"] .navbar-toggler {
+	border-color: rgba(0, 0, 0, 0.25);
+}
+[data-theme="light"] .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280%2c0%2c0%2c0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ── Theme toggle button ─────────────────────────────────────────────── */
+.theme-toggle {
+	background: var(--toggle-bg);
+	border: 1px solid var(--toggle-border);
+	color: var(--toggle-color);
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition:
+		background 0.25s ease,
+		border-color 0.25s ease,
+		color 0.25s ease,
+		transform 0.2s ease;
+	flex-shrink: 0;
+	padding: 0;
+	font-size: 0.85rem;
+}
+.theme-toggle:hover {
+	background: var(--accent-sub);
+	border-color: var(--accent-border);
+	color: var(--accent);
+	transform: rotate(15deg);
 }
 
 /* ── Buttons ─────────────────────────────────────────────────────────── */
 .btn-red {
-  background-color: #dc3545;
-  color: white;
-  transition: all 0.25s ease;
-  border-radius: 8px;
-  font-weight: 500;
+	background-color: var(--accent);
+	color: white;
+	transition: all 0.25s ease;
+	border-radius: 8px;
+	font-weight: 500;
 }
 .btn-red:hover {
-  background-color: #c82333;
-  transform: translateY(-2px);
-  color: white;
-  box-shadow: 0 6px 18px rgba(220, 53, 69, 0.35);
+	background-color: var(--accent-hover);
+	transform: translateY(-2px);
+	color: white;
+	box-shadow: 0 6px 18px rgba(220, 53, 69, 0.35);
 }
 
 .btn-outline-white {
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  color: white;
-  transition: all 0.25s ease;
-  border-radius: 8px;
-  font-weight: 500;
+	/* Use the primary text colour for the border so it's fully visible in both modes */
+	border: 2px solid var(--text);
+	color: var(--text);
+	transition: all 0.25s ease;
+	border-radius: 8px;
+	font-weight: 500;
+	background: transparent;
 }
 .btn-outline-white:hover {
-  background-color: white;
-  border-color: white;
-  color: black;
-  transform: translateY(-2px);
+	background-color: var(--text);
+	border-color: var(--text);
+	color: var(--bg);
+	transform: translateY(-2px);
 }
 
 /* ── Hero ────────────────────────────────────────────────────────────── */
 .profile-img-container {
-  position: relative;
-  width: 260px;
-  height: 260px;
+	position: relative;
+	width: 260px;
+	height: 260px;
 }
 .profile-img-container::before {
-  content: '';
-  position: absolute;
-  inset: -10px;
-  background: radial-gradient(circle, rgba(220, 53, 69, 0.4) 0%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(24px);
-  z-index: 0;
+	content: "";
+	position: absolute;
+	inset: -10px;
+	background: radial-gradient(
+		circle,
+		rgba(220, 53, 69, 0.4) 0%,
+		transparent 70%
+	);
+	border-radius: 50%;
+	filter: blur(24px);
+	z-index: 0;
 }
 .profile-img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(220, 53, 69, 0.6);
-  z-index: 1;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 3px solid rgba(220, 53, 69, 0.6);
+	z-index: 1;
 }
 
 @keyframes float {
-  0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-12px); }
-  100% { transform: translateY(0px); }
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-12px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 .floating {
-  animation: float 7s ease-in-out infinite;
+	animation: float 7s ease-in-out infinite;
+}
+
+/* ── About / Resume — light sections ────────────────────────────────── */
+/* In dark mode these use Bootstrap's bg-light / bg-white which stays as-is.
+   In light mode we adapt them to the lighter palette. */
+[data-theme="light"] .bg-light {
+	background-color: var(
+		--light-section-bg
+	) !important;
+}
+[data-theme="light"] .bg-white {
+	background-color: var(
+		--light-card-bg
+	) !important;
+}
+[data-theme="light"] .bg-black {
+	background-color: var(--footer-bg) !important;
+}
+[data-theme="light"] .text-dark {
+	color: var(--text) !important;
+}
+[data-theme="light"] .text-muted {
+	color: var(--text-sec) !important;
+}
+[data-theme="light"] .text-secondary {
+	color: var(--text-sec) !important;
+}
+[data-theme="light"] .border-bottom {
+	border-color: var(--border) !important;
+}
+[data-theme="light"] .border-top {
+	border-color: var(--border) !important;
+}
+/* Inline-style colours that Bootstrap shadow-sm overrides can't reach */
+[data-theme="light"] .shadow-sm {
+	box-shadow: 0 1px 6px var(--shadow) !important;
+}
+
+/* About info card links in dark mode stay readable */
+[data-theme="dark"] .about-info-card a.text-dark {
+	color: var(--text) !important;
+}
+
+/* ── Skill pills ─────────────────────────────────────────────────────── */
+.skill-pill {
+	transition: all 0.2s ease;
+	font-weight: 500;
+	font-size: 0.78rem;
+	border-radius: 20px !important;
+	cursor: default;
+}
+.skill-pill:hover {
+	background-color: var(--accent) !important;
+	color: white !important;
+	transform: translateY(-1px);
 }
 
 /* ── Project Cards ───────────────────────────────────────────────────── */
 .project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 12px !important;
-  overflow: hidden;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+	border-radius: 12px !important;
+	overflow: hidden;
 }
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
-}
-
-.project-img {
-  height: 200px;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+	transform: translateY(-6px);
+	box-shadow: 0 16px 40px var(--shadow) !important;
 }
 
 /* placeholder shimmer when no project image */
 .project-img-placeholder {
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(135deg, #1a1a2e, #212529, #2c2c3e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ── Skills / Pills ──────────────────────────────────────────────────── */
-.skill-pill {
-  transition: all 0.2s ease;
-  font-weight: 500;
-  font-size: 0.78rem;
-  border-radius: 20px !important;
-  cursor: default;
-}
-.skill-pill:hover {
-  background-color: #dc3545 !important;
-  color: white !important;
-  transform: translateY(-1px);
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(
+		135deg,
+		#1a1a2e,
+		#212529,
+		#2c2c3e
+	);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* ── Social Icons ────────────────────────────────────────────────────── */
 .social-icon {
-  font-size: 1.2rem;
-  transition: color 0.25s ease, transform 0.25s ease;
+	font-size: 1.2rem;
+	color: var(--navbar-text) !important;
+	transition:
+		color 0.25s ease,
+		transform 0.25s ease;
 }
 .social-icon:hover {
-  color: #dc3545 !important;
-  transform: translateY(-2px);
+	color: var(--accent) !important;
+	transform: translateY(-2px);
 }
 
 /* ── About Section ───────────────────────────────────────────────────── */
 .about-photo {
-  width: 100%;
-  max-width: 280px;
-  height: 320px;
-  object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+	width: 100%;
+	max-width: 280px;
+	height: 320px;
+	object-fit: cover;
+	border: 3px solid white;
+	box-shadow: 0 8px 32px var(--shadow);
 }
 
 .about-img-wrapper {
-  position: relative;
-  width: fit-content;
+	position: relative;
+	width: fit-content;
 }
 .about-img-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  right: -12px;
-  bottom: -12px;
-  border: 2px solid #dc3545;
-  border-radius: 12px;
-  z-index: 0;
-  opacity: 0.4;
+	content: "";
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	right: -12px;
+	bottom: -12px;
+	border: 2px solid var(--accent);
+	border-radius: 12px;
+	z-index: 0;
+	opacity: 0.4;
 }
 .about-img-wrapper img {
-  position: relative;
-  z-index: 1;
+	position: relative;
+	z-index: 1;
 }
 
 .about-info-card {
-  border: 1px solid rgba(0, 0, 0, 0.06);
+	border: 1px solid var(--border);
+	background: var(--light-card-bg);
+	transition: background 0.3s ease;
+}
+[data-theme="dark"] .about-info-card {
+	background: #1a1a1a;
+	border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme="dark"] .about-info-card span,
+[data-theme="dark"] .about-info-card a {
+	color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* ── Resume Section ──────────────────────────────────────────────────── */
 .resume-timeline-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #dc3545;
-  border-radius: 50%;
-  margin-top: 6px;
-  flex-shrink: 0;
+	width: 10px;
+	height: 10px;
+	background-color: var(--accent);
+	border-radius: 50%;
+	margin-top: 6px;
+	flex-shrink: 0;
+}
+
+/* Resume card overrides for dark mode */
+[data-theme="dark"] .resume-card {
+	background: #161616 !important;
+	border: 1px solid rgba(255, 255, 255, 0.07) !important;
+	color: var(--text) !important;
+}
+[data-theme="dark"] .resume-card h3,
+[data-theme="dark"] .resume-card h4,
+[data-theme="dark"] .resume-card h5 {
+	color: #fff !important;
+}
+[data-theme="dark"] .resume-card .text-muted {
+	color: rgba(255, 255, 255, 0.45) !important;
+}
+[data-theme="dark"] .resume-card .border-bottom {
+	border-color: rgba(
+		255,
+		255,
+		255,
+		0.08
+	) !important;
+}
+[data-theme="dark"] .resume-card ul li {
+	color: rgba(255, 255, 255, 0.6);
+}
+[data-theme="dark"] .resume-header-card {
+	background: #161616 !important;
+	color: var(--text) !important;
+}
+[data-theme="dark"] .resume-header-card h3 {
+	color: #fff !important;
+}
+[data-theme="dark"]
+	.resume-header-card
+	.text-muted {
+	color: rgba(255, 255, 255, 0.45) !important;
+}
+[data-theme="dark"] .resume-header-card a {
+	color: rgba(255, 255, 255, 0.55) !important;
+}
+[data-theme="dark"] .btn-download {
+	background: var(--accent) !important;
+	color: #fff !important;
+	border-color: var(--accent) !important;
 }
 
 /* ── Contact Section ─────────────────────────────────────────────────── */
 .contact-info-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(220, 53, 69, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+	width: 40px;
+	height: 40px;
+	background: var(--accent-sub);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+/* ── Contact Form ────────────────────────────────────────────────────── */
+.contact-form-card {
+	background: var(--form-card) !important;
+	color: var(--form-card-text) !important;
+	border: 1px solid var(--card-border);
+	transition: background 0.3s ease;
+}
+.contact-form-card h3,
+.contact-form-card p,
+.contact-form-card label {
+	color: var(--form-card-text) !important;
+}
+.contact-form-card .text-muted {
+	color: var(--text-sec) !important;
+}
+
+.form-control {
+	background-color: var(--input-bg) !important;
+	border-color: var(--input-border) !important;
+	color: var(--input-text) !important;
+	transition:
+		background-color 0.3s ease,
+		border-color 0.3s ease,
+		color 0.3s ease;
+}
+.form-control::placeholder {
+	color: var(--input-ph) !important;
+}
+.form-control:focus {
+	border-color: var(--accent) !important;
+	box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15) !important;
+	background-color: var(--input-bg) !important;
+	color: var(--input-text) !important;
+}
+
+.form-label {
+	color: var(--form-card-text) !important;
+}
+
+.btn-submit {
+	background: var(--accent) !important;
+	color: #fff !important;
+	border: none !important;
+	font-weight: 600;
+	transition:
+		background 0.2s ease,
+		transform 0.2s ease !important;
+}
+.btn-submit:hover:not(:disabled) {
+	background: var(--accent-hover) !important;
+	transform: translateY(-1px);
+}
+.btn-submit:disabled {
+	opacity: 0.65;
+}
+
+/* ── Social link buttons ─────────────────────────────────────────────── */
+.social-link-btn {
+	color: var(--text) !important;
+	border-color: var(--border) !important;
+	transition:
+		background 0.25s ease,
+		color 0.25s ease,
+		border-color 0.25s ease;
+}
+.social-link-btn:hover {
+	background: var(--accent-sub) !important;
+	border-color: var(--accent-border) !important;
+	color: var(--accent) !important;
 }
 
 /* ── Footer ──────────────────────────────────────────────────────────── */
+.portfolio-footer {
+	background-color: var(--footer-bg) !important;
+	color: rgba(255, 255, 255, 0.7);
+	border-top: 1px solid var(--footer-border);
+	transition: background-color 0.3s ease;
+}
 .footer-link {
-  font-size: 0.9rem;
-  transition: color 0.25s ease;
+	font-size: 0.9rem;
+	color: rgba(255, 255, 255, 0.5) !important;
+	text-decoration: none;
+	transition: color 0.25s ease;
 }
 .footer-link:hover {
-  color: #dc3545 !important;
+	color: var(--accent) !important;
 }
 
 /* ── Section headings ────────────────────────────────────────────────── */
 .section-label {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #dc3545;
-  margin-bottom: 0.75rem;
+	display: inline-block;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--accent);
+	margin-bottom: 0.75rem;
 }
 
 /* ── Divider accent ──────────────────────────────────────────────────── */
 .section-divider {
-  width: 48px;
-  height: 3px;
-  background: #dc3545;
-  border-radius: 2px;
-  margin: 0 auto 1.5rem;
+	width: 48px;
+	height: 3px;
+	background: var(--accent);
+	border-radius: 2px;
+	margin: 0 auto 1.5rem;
 }
 
-/* ── Social link buttons (Contact page) ─────────────────────────────── */
-.social-link-btn {
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+/* ── About section heading ───────────────────────────────────────────── */
+/* About always has a light (#f8f9fa) background in BOTH modes —
+   text must always be dark regardless of which theme is active. */
+.about-section-heading {
+	color: #111111 !important;
 }
-.social-link-btn:hover {
-  background: rgba(220, 53, 69, 0.12) !important;
-  border-color: #dc3545 !important;
-  color: #dc3545 !important;
+.about-section-text {
+	color: #444444 !important;
+}
+.about-section-text strong {
+	color: #111111 !important;
 }
 
-/* ── form controls ───────────────────────────────────────────────────── */
-.form-control:focus {
-  border-color: #dc3545;
-  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+.my-resume-section-heading {
+	color: #111111 !important;
+}
+
+/* ── Featured Projects — dark section ───────────────────────────────── */
+/* The ProjectsContainer uses inline styles that read from CSS vars via JS */
+
+/* ── Navbar mobile menu spacing ─────────────────────────────────────── */
+@media (max-width: 991px) {
+	.navbar-collapse .navbar-nav {
+		padding-bottom: 0.5rem;
+	}
+	.navbar-collapse .nav-end-group {
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		border-top: 1px solid var(--border);
+		margin-top: 0.25rem;
+	}
+}
+
+/* ── Bootstrap-missing responsive utilities ──────────────────────────── */
+@media (min-width: 768px) {
+	.w-md-auto {
+		width: auto !important;
+	}
 }
 
 /* ── Responsive tweaks ───────────────────────────────────────────────── */
 @media (max-width: 576px) {
-  .hero-section {
-    padding-top: 7rem;
-    padding-bottom: 4rem;
-  }
-  .profile-img-container {
-    width: 200px;
-    height: 200px;
-  }
+	.hero-section {
+		padding-top: 7rem;
+		padding-bottom: 4rem;
+	}
+	.profile-img-container {
+		width: 180px;
+		height: 180px;
+	}
+	.hero-stats-row {
+		gap: 1rem !important;
+	}
+	.section-padding {
+		padding-top: 3.5rem;
+		padding-bottom: 3.5rem;
+	}
+	/* Resume header stacks cleanly on small screens */
+	.resume-header-card .btn-download {
+		width: 100% !important;
+		text-align: center;
+		justify-content: center;
+	}
+	/* Contact email wraps without overflow */
+	.contact-email-link {
+		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.profile-img-container {
+		width: 220px;
+		height: 220px;
+	}
+	/* Navbar collapse items get breathing room */
+	.navbar-collapse .nav-link {
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+	}
 }
