@@ -60,14 +60,12 @@ app.use(
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (e.g. curl, Postman — only in dev)
-      if (!origin) {
-        if (IS_PROD) return callback(new Error("CORS: no origin not permitted in production"), false);
-        return callback(null, true);
-      }
-      if (ALLOWED_ORIGINS.includes(origin)) {
-        return callback(null, true);
-      }
+      // No Origin header = direct browser navigation (typing a URL, clicking a bookmark,
+      // following a link from a non-web context, server-side curl health checks, etc.).
+      // These requests are NEVER cross-origin attacks — only requests that actually
+      // originate from a different domain include an Origin header.  Allow them always.
+      if (!origin) return callback(null, true);
+      if (ALLOWED_ORIGINS.includes(origin)) return callback(null, true);
       return callback(new Error(`CORS: origin '${origin}' not permitted`), false);
     },
     methods: ["GET"],          // this server only serves static files — no POST needed
